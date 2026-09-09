@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Admin login for QuickBite Canteen Management System." />
+  <title>Admin Login — QuickBite Canteen</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <div id="root">
+    <nav class="navbar" id="navbar"></nav>
+    <div class="page-container">
+      <div class="admin-login-container">
+        <div class="admin-login-card">
+          <div style="text-align:center;margin-bottom:1.5rem">
+            <div style="width:64px;height:64px;border-radius:50%;
+                        background:linear-gradient(135deg,var(--primary-500),var(--primary-700));
+                        display:flex;align-items:center;justify-content:center;
+                        margin:0 auto 1rem;font-size:1.5rem;color:white">
+              🔒
+            </div>
+            <h1>Admin Login</h1>
+            <p class="subtitle">Sign in to manage your canteen</p>
+          </div>
+
+          <div id="login-error"></div>
+
+          <form id="login-form">
+            <div class="form-group">
+              <label>Username</label>
+              <input type="text" class="form-input" placeholder="Enter username"
+                     id="admin-username" required />
+            </div>
+            <div class="form-group">
+              <label>Password</label>
+              <input type="password" class="form-input" placeholder="Enter password"
+                     id="admin-password" required />
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg" id="login-btn"
+                    style="width:100%;margin-top:0.5rem">
+              Sign In 🔑
+            </button>
+          </form>
+
+          <p style="text-align:center;margin-top:1.5rem;font-size:0.85rem;color:var(--text-muted)">
+            Default credentials: admin / admin123
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/js/app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      renderNavbar('admin');
+
+      document.getElementById('login-form').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const errorEl = document.getElementById('login-error');
+        const btn = document.getElementById('login-btn');
+        const username = document.getElementById('admin-username').value;
+        const password = document.getElementById('admin-password').value;
+
+        errorEl.innerHTML = '';
+        btn.disabled = true;
+        btn.textContent = 'Signing in...';
+
+        try {
+          const data = await apiFetch('/auth/login', {
+            method: 'POST',
+            body: JSON.stringify({ username, password }),
+          });
+          Auth.setToken(data.token);
+          Auth.setUser(data.admin);
+          window.location.href = '/admin/dashboard.html';
+        } catch (err) {
+          errorEl.innerHTML = `<div class="alert alert-error">${err.message || 'Login failed'}</div>`;
+          btn.disabled = false;
+          btn.textContent = 'Sign In 🔑';
+        }
+      });
+    });
+  </script>
+</body>
+</html>
