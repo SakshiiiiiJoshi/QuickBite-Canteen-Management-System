@@ -7,11 +7,11 @@ let editingFoodId = null;
 let orderPollInterval = null;
 
 const FOOD_IMAGES = {
-  Starters: 'https://images.unsplash.com/photo-1541014741259-de529411b96a?w=400&h=300&fit=crop',
-  'Main Course': 'https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=400&h=300&fit=crop',
-  Beverages: 'https://images.unsplash.com/photo-1544145945-f90425340c7e?w=400&h=300&fit=crop',
+  Starters: '/images/spring_rolls.png',
+  'Main Course': '/images/butter_naan.png',
+  Beverages: '/images/mango_lassi.png',
   Desserts: 'https://images.unsplash.com/photo-1551024506-0bccd828d307?w=400&h=300&fit=crop',
-  Snacks: 'https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=400&h=300&fit=crop',
+  Snacks: '/images/vada_pav.png',
 };
 
 document.addEventListener('DOMContentLoaded', () => {

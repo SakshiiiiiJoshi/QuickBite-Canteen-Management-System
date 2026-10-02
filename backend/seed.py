@@ -31,7 +31,7 @@ SAMPLE_FOODS = [
         'description': 'Crispy rolls stuffed with fresh vegetables and served with chili sauce',
         'price': 120,
         'category': 'Starters',
-        'image': 'https://images.unsplash.com/photo-1606525437817-0fd4b9644f84?w=400&h=300&fit=crop',
+        'image': '/images/spring_rolls.png',
         'is_available': True,
     },
 
@@ -57,7 +57,7 @@ SAMPLE_FOODS = [
         'description': 'Soft tandoor-baked bread brushed with butter',
         'price': 40,
         'category': 'Main Course',
-        'image': 'https://images.unsplash.com/photo-1600398142498-c5f5e0f8a7ce?w=400&h=300&fit=crop',
+        'image': '/images/butter_naan.png',
         'is_available': True,
     },
 
@@ -67,7 +67,7 @@ SAMPLE_FOODS = [
         'description': 'Refreshing yogurt drink blended with alphonso mango',
         'price': 80,
         'category': 'Beverages',
-        'image': 'https://images.unsplash.com/photo-1553530666-ba11a7da3888?w=400&h=300&fit=crop',
+        'image': '/images/mango_lassi.png',
         'is_available': True,
     },
     {
@@ -107,7 +107,7 @@ SAMPLE_FOODS = [
         'description': 'Spiced yogurt drink with cumin and fresh coriander',
         'price': 30,
         'category': 'Beverages',
-        'image': 'https://images.unsplash.com/photo-1587049352846-4a222e784d38?w=400&h=300&fit=crop',
+        'image': '/images/buttermilk.png',
         'is_available': True,
     },
 
@@ -167,7 +167,7 @@ SAMPLE_FOODS = [
         'description': 'Mumbai-style spiced potato fritter in a bun with chutneys',
         'price': 40,
         'category': 'Snacks',
-        'image': 'https://images.unsplash.com/photo-1606491956689-2ea866880049?w=400&h=300&fit=crop',
+        'image': '/images/vada_pav.png',
         'is_available': True,
     },
     {

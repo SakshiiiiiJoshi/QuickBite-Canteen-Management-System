@@ -1,0 +1,23 @@
+databases:
+  - name: quickbite-db
+    databaseName: canteen
+    user: quickbite
+    plan: free
+
+services:
+  - type: web
+    name: quickbite-backend
+    runtime: python
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app
+    plan: free
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: quickbite-db
+          property: connectionString
+      - key: JWT_SECRET
+        generateValue: true
+      - key: PYTHON_VERSION
+        value: 3.11.0

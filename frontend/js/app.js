@@ -144,7 +144,7 @@ function renderNavbar(activePage) {
 }
 
 /* ── Placeholder image ────────────────────────────────────────────────── */
-const PLACEHOLDER_IMAGE = 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=400&h=300&fit=crop';
+const PLACEHOLDER_IMAGE = '/images/vada_pav.png';
 
 function handleImgError(img) {
   img.onerror = null;
